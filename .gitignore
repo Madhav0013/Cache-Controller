@@ -1,0 +1,11 @@
+*.vcd
+*.vpd
+*.fsdb
+simv
+simv.daidir/
+csrc/
+*.log
+*.key
+DVEfiles/
+__pycache__/
+*.pyc
