@@ -10,7 +10,7 @@ class cache_base_seq extends uvm_sequence #(cache_seq_item);
         cache_seq_item t;
         t = cache_seq_item::type_id::create("t");
         start_item(t);
-        if (!t.randomize() with { t.wr == 1; t.addr == addr; t.wdata == data; })
+        if (!t.randomize() with { t.wr == 1; t.addr == local::addr; t.wdata == local::data; })
             `uvm_error("SEQ", "Randomization failed")
         finish_item(t);
     endtask
@@ -19,7 +19,7 @@ class cache_base_seq extends uvm_sequence #(cache_seq_item);
         cache_seq_item t;
         t = cache_seq_item::type_id::create("t");
         start_item(t);
-        if (!t.randomize() with { t.wr == 0; t.addr == addr; })
+        if (!t.randomize() with { t.wr == 0; t.addr == local::addr; })
             `uvm_error("SEQ", "Randomization failed")
         finish_item(t);
     endtask
