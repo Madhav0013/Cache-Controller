@@ -199,10 +199,9 @@ module cache_controller
 
                 WRITEBACK: begin
                     if (mem_ready) begin
-                        // Writeback complete — now allocate (read new line from memory)
-                        mem_req  <= 1'b1;
-                        mem_wr   <= 1'b0;
-                        mem_addr <= cpu_addr_reg;
+                        // Writeback complete — do NOT issue read here.
+                        // Let mem_req default to 0 so mem_ready deasserts,
+                        // then ALLOCATE state will issue the read request.
                     end else begin
                         // Keep request asserted until memory responds
                         mem_req   <= 1'b1;

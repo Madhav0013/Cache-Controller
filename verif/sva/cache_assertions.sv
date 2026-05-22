@@ -63,7 +63,7 @@ module cache_assertions
     // =========================================================================
     FP4_WRITEBACK_BEFORE_ALLOCATE: assert property (
         @(posedge clk) disable iff (!rst_n)
-        (state == WRITEBACK) |-> (mem_req && mem_wr)
+        (state == WRITEBACK && !mem_ready) |-> (mem_req && mem_wr)
     ) else $error("[FP4] In WRITEBACK state but not writing to memory");
 
     // =========================================================================
