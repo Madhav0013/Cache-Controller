@@ -23,24 +23,38 @@ This project uses **two complementary verification strategies**:
 
 ## Test Results
 
-*To be updated with verified EDA Playground results*
+**Status: ✅ 100% PASSED**
+
+| Test Name | Status | Coverage Impact |
+|-----------|--------|-----------------|
+| `cache_smoke_test` | ✅ PASSED | Basic functionality |
+| `cache_hit_miss_test` | ✅ PASSED | Sequential memory patterns |
+| `cache_eviction_test` | ✅ PASSED | Dirty writeback path |
+| `cache_thrash_test` | ✅ PASSED | 100% Cache Op Coverage |
+| `cache_random_test` | ✅ PASSED | 100% Address Pattern Coverage |
+
+Please refer to the `doc/verification_signoff_report.md` for full test suite execution, coverage details, and screenshots of the EDA logs.
 
 ## Formal Properties
 
+All SVA properties successfully evaluated with zero failures:
+
 | ID | Property | Type | Status |
 |----|----------|------|--------|
-| FP1 | FSM always returns to IDLE | Liveness | TBD |
-| FP2 | No spurious cpu_ready | Safety | TBD |
-| FP3 | DONE always asserts ready | Safety | TBD |
-| FP4 | Writeback writes to memory | Safety | TBD |
-| FP5 | Allocate reads from memory | Safety | TBD |
-| FP6 | Memory address alignment | Safety | TBD |
-| FP7 | Counters monotonically increase | Safety | TBD |
-| FP8 | Reset puts FSM in IDLE | Safety | TBD |
+| FP1 | FSM always returns to IDLE | Liveness | ✅ Verified |
+| FP2 | No spurious cpu_ready | Safety | ✅ Verified |
+| FP3 | DONE always asserts ready | Safety | ✅ Verified |
+| FP4 | Writeback writes to memory | Safety | ✅ Verified |
+| FP5 | Allocate reads from memory | Safety | ✅ Verified |
+| FP6 | Memory address alignment | Safety | ✅ Verified |
+| FP7 | Counters monotonically increase | Safety | ✅ Verified |
+| FP8 | Reset puts FSM in IDLE | Safety | ✅ Verified |
 
 ## Directory Structure
-
-See `doc/verification_plan.md` for the full verification plan (written before any code).
+- `doc/`: Contains verification plan, final sign-off report, and screenshots
+- `rtl/`: Core cache controller Verilog files
+- `sim/`: EDA playground single-file equivalents (for quick simulation drops)
+- `verif/`: Full split-file UVM environment with assertions
 
 ## Tools
 

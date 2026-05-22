@@ -14,13 +14,13 @@ All criteria defined in the Verification Plan have been successfully met. The RT
 
 All tests in the UVM regression suite have passed with zero `UVM_ERROR` or `UVM_FATAL` occurrences. The scoreboard confirmed 100% data integrity across all reads.
 
-| Test Name | Status | Description | Scoreboard Checks |
-|-----------|--------|-------------|-------------------|
-| `cache_smoke_test` | ✅ PASSED | Basic write and read-back functionality | 2/2 |
-| `cache_hit_miss_test` | ✅ PASSED | Mix of cache hits and clean misses | 20/20 |
-| `cache_eviction_test` | ✅ PASSED | Directed eviction and dirty writebacks | 5/5 |
-| `cache_thrash_test` | ✅ PASSED | High volume of evictions (2x cache size) | 64/64 |
-| `cache_random_test` | ✅ PASSED | Constrained random addresses & sequences | 57/57 |
+| Test Name | Status | Checks | Report Screenshot | Scoreboard Screenshot |
+|-----------|--------|--------|-------------------|-----------------------|
+| `cache_smoke_test` | ✅ PASSED | 2/2 | [View Report](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/smoke_report.png.png) | [View Scoreboard](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/smoke_scoreboard.png.png) |
+| `cache_hit_miss_test` | ✅ PASSED | 20/20 | [View Report](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/hit_miss_report.png.png) | [View Scoreboard](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/hit_miss_scoreboard.png.png) |
+| `cache_eviction_test` | ✅ PASSED | 5/5 | [View Report](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/eviction_report.png.png) | [View Scoreboard](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/eviction_scoreboard.png.png) |
+| `cache_thrash_test` | ✅ PASSED | 64/64 | [View Report](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/thrash_report.png.png) | [View Scoreboard](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/thrash_scoreboard.png.png) |
+| `cache_random_test` | ✅ PASSED | 57/57 | [View Report](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/random_report.png.png) | [View Scoreboard](file:///D:/PROJECTS/Cache%20Controller/cache-controller-formal/doc/screenshots/random_scoreboard.png.png) |
 
 ---
 
